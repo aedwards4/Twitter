@@ -14,6 +14,10 @@ class TweetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tweetTextView.layer.cornerRadius = 15
+        tweetTextView.layer.borderWidth = 2
+        tweetTextView.layer.borderColor = #colorLiteral(red: 0, green: 0.6917446852, blue: 1, alpha: 1)
 
         tweetTextView.becomeFirstResponder()
     }

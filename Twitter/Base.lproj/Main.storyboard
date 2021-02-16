@@ -136,10 +136,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HtY-4o-QcV">
-                                <rect key="frame" x="0.0" y="56" width="414" height="128"/>
+                                <rect key="frame" x="20" y="76" width="374" height="216"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="A8x-Az-Smb"/>
+                                    <constraint firstAttribute="height" constant="216" id="t2I-20-RJE"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -149,9 +149,9 @@
                         <viewLayoutGuide key="safeArea" id="niq-XB-8Xa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HtY-4o-QcV" firstAttribute="top" secondItem="niq-XB-8Xa" secondAttribute="top" id="8yI-Ii-SED"/>
-                            <constraint firstItem="niq-XB-8Xa" firstAttribute="trailing" secondItem="HtY-4o-QcV" secondAttribute="trailing" id="NUh-JT-62N"/>
-                            <constraint firstItem="HtY-4o-QcV" firstAttribute="leading" secondItem="niq-XB-8Xa" secondAttribute="leading" id="lSH-Fo-1EB"/>
+                            <constraint firstItem="HtY-4o-QcV" firstAttribute="top" secondItem="niq-XB-8Xa" secondAttribute="top" constant="20" id="ICp-bG-MEg"/>
+                            <constraint firstItem="niq-XB-8Xa" firstAttribute="trailing" secondItem="HtY-4o-QcV" secondAttribute="trailing" constant="20" id="UyU-EI-0xa"/>
+                            <constraint firstItem="HtY-4o-QcV" firstAttribute="leading" secondItem="niq-XB-8Xa" secondAttribute="leading" constant="20" id="gF5-hy-Jgn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eYz-ce-mb8">
