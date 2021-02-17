@@ -74,4 +74,10 @@ class TwitterAPICaller: BDBOAuth1SessionManager {
         })
     }
     
+    func favoriteTweet(tweetId: Int, success: @escaping () -> (), failure: @escaping (Error) -> ()){
+        let url = "https://api.twitter.com/1.1/favorites/create.json"
+        
+        
+    }
+    
 }

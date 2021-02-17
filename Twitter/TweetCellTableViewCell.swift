@@ -13,6 +13,20 @@ class TweetCellTableViewCell: UITableViewCell {
     @IBOutlet weak var tweetContent: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var retweetButton: UIButton!
+    @IBOutlet weak var favButton: UIButton!
+    
+    var favorited:Bool = false
+    
+    func setFavorite(_ isFavorited: Bool){
+        favorited = isFavorited
+        if (favorited){
+            favButton.setImage(UIImage(named:"favor-icon-red"), for: UIControl.State.normal)
+        }
+        else{
+            favButton.setImage(UIImage(named:"favor-icon"), for: UIControl.State.normal)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,5 +38,17 @@ class TweetCellTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    @IBAction func retweet(_ sender: Any) {
+    }
+    
+    @IBAction func favoriteTweet(_ sender: Any) {
+        
+        if(favorited){
+            setFavorite(false)
+        }
+        else{
+            setFavorite(true)
+        }
+    }
 }
