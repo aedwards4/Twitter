@@ -106,11 +106,21 @@ class HomeTableTableViewController: UITableViewController {
         
         if let imageData = data {
             cell.profileImageView.image = UIImage(data: imageData)
+            cell.profileImageView.layer.borderWidth = 2.0
+            cell.profileImageView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            cell.profileImageView.clipsToBounds = true
+            cell.profileImageView.layer.cornerRadius = (cell.profileImageView?.frame.size.width ?? 0.0) / 2
         }
         
         cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
         cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
         cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
+        
+        let fCount = tweetArray[indexPath.row]["favorite_count"] as! Int
+        cell.favCount.text = String(fCount)
+        
+        let rCount = tweetArray[indexPath.row]["retweet_count"] as! Int
+        cell.retweetCount.text = String(rCount)
         
         
         return cell
