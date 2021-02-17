@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ce6-8i-MaT">
-                                <rect key="frame" x="104.66666666666669" y="418" width="205" height="60"/>
+                                <rect key="frame" x="104.66666666666669" y="483" width="205" height="50"/>
                                 <color key="backgroundColor" red="0.51224297605117874" green="0.78581369941351165" blue="0.84227418363764039" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="QW6-7f-bz8"/>
+                                    <constraint firstAttribute="height" constant="50" id="QW6-7f-bz8"/>
                                     <constraint firstAttribute="width" constant="205" id="Toh-WD-7za"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
@@ -32,12 +32,17 @@
                                     <action selector="onLoginButton:" destination="ugt-jc-SH6" eventType="touchUpInside" id="aC2-YA-571"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TwitterLogoBlue" translatesAutoresizingMaskIntoConstraints="NO" id="X3a-iB-UlN">
+                                <rect key="frame" x="140.33333333333331" y="321.33333333333331" width="133.33333333333331" height="133.33333333333331"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QUm-m3-7XR"/>
-                        <color key="backgroundColor" red="0.73497802020000003" green="0.89718526600000004" blue="0.94118577240000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ce6-8i-MaT" firstAttribute="centerX" secondItem="gXc-1N-VyE" secondAttribute="centerX" id="7mB-8z-290"/>
-                            <constraint firstItem="ce6-8i-MaT" firstAttribute="centerY" secondItem="gXc-1N-VyE" secondAttribute="centerY" id="PoO-fC-MKc"/>
+                            <constraint firstItem="ce6-8i-MaT" firstAttribute="centerY" secondItem="gXc-1N-VyE" secondAttribute="centerY" constant="60" id="PoO-fC-MKc"/>
+                            <constraint firstItem="X3a-iB-UlN" firstAttribute="centerX" secondItem="gXc-1N-VyE" secondAttribute="centerX" id="S4p-i6-5c1"/>
+                            <constraint firstItem="X3a-iB-UlN" firstAttribute="centerY" secondItem="gXc-1N-VyE" secondAttribute="centerY" constant="-60" id="aep-KU-u2Y"/>
                         </constraints>
                     </view>
                     <connections>
@@ -282,6 +287,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="TwitterLogoBlue" width="133.33332824707031" height="133.33332824707031"/>
         <image name="favor-icon" width="30" height="30"/>
         <image name="retweet-icon" width="30" height="30"/>
         <systemColor name="labelColor">

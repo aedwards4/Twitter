@@ -27,7 +27,7 @@ class TweetViewController: UIViewController, UITextViewDelegate {
         
         
         tweetTextView.delegate = self
-        tweetTextView.text = "What are you thinking?"
+        tweetTextView.text = " What are you thinking?"
         tweetTextView.textColor = UIColor.lightGray
         tweetTextView.layer.cornerRadius = 15
         tweetTextView.layer.borderWidth = 3.0
@@ -48,7 +48,7 @@ class TweetViewController: UIViewController, UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "What are you thinking?"
+            textView.text = " What are you thinking?"
             textView.textColor = UIColor.lightGray
         }
     }
