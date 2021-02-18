@@ -48,6 +48,8 @@ class LoginViewController: UIViewController {
         }, failure: { (Error) in
             print("Could not login")
         })
+        
+        
     }
     
     /*

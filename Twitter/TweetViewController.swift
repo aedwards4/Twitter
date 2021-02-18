@@ -12,6 +12,7 @@ class TweetViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var tweetTextView: UITextView!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var charCount: UILabel!
     
     
     override func viewDidLoad() {
@@ -36,6 +37,26 @@ class TweetViewController: UIViewController, UITextViewDelegate {
         //Commented out in order to use placeholder text
         //tweetTextView.becomeFirstResponder()
     }
+    
+    //Implementing character count
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        // Set the max character limit
+        let characterLimit = 140
+
+        // Construct what the new text would be if we allowed the user's latest edit
+        let newText = NSString(string: textView.text!).replacingCharacters(in: range, with: text)
+
+        // TODO: Update Character Count Label
+        var count = characterLimit - newText.count
+        charCount.text = String(count)
+        if (count <= 20){
+            charCount.textColor = #colorLiteral(red: 1, green: 0, blue: 0.09898722917, alpha: 1)
+        }
+
+        // The new text should be allowed? True/False
+        return newText.count < characterLimit
+    }
+    
     
     //The following two functions were borrowed from Stack Overflow
     //
