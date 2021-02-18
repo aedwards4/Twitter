@@ -45,7 +45,7 @@ class TweetViewController: UIViewController, UITextViewDelegate {
 
         TwitterAPICaller.client?.getDictionaryRequest(url: userURL, parameters: myParams, success: { (info: NSDictionary) in
             self.userInfo = info
-            print(self.userInfo)
+            //print(self.userInfo)
             
             let url = URL(string: self.userInfo["profile_image_url"] as! String)
             let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
