@@ -292,7 +292,7 @@
                             <constraint firstItem="Cdk-xD-0C1" firstAttribute="top" secondItem="L8X-P5-mgH" secondAttribute="bottom" constant="8" id="zWO-dK-Oa2"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" selectedImage="profile-Icon" id="1e1-On-r2G"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile-Icon" selectedImage="profile-Icon" id="1e1-On-r2G"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="Cdk-xD-0C1" id="Fru-xO-rxl"/>
                         <outlet property="followerCount" destination="GOk-gM-ZDj" id="IHb-uX-hTN"/>
@@ -422,6 +422,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Kyg-AJ-Glt" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Uo-c3-mD1">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
