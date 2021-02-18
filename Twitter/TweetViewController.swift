@@ -13,11 +13,13 @@ class TweetViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var tweetTextView: UITextView!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var charCount: UILabel!
+    var userInfo = NSDictionary()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Styling the profileImageView
         //placeholder image until I can replace with user's profile image
         let image = UIImage(named: "TwitterLogoBlue")
         profileImage.image = image
@@ -26,7 +28,7 @@ class TweetViewController: UIViewController, UITextViewDelegate {
         profileImage.clipsToBounds = true
         profileImage.layer.cornerRadius = (profileImage?.frame.size.width ?? 0.0) / 2
         
-        
+        // Styling the textView
         tweetTextView.delegate = self
         tweetTextView.text = " What are you thinking?"
         tweetTextView.textColor = UIColor.lightGray
@@ -36,6 +38,23 @@ class TweetViewController: UIViewController, UITextViewDelegate {
 
         //Commented out in order to use placeholder text
         //tweetTextView.becomeFirstResponder()
+        
+        //Retrieving user info
+        let userURL = "https://api.twitter.com/1.1/users/show.json"
+        let myParams = ["screen_name":"aelauve"]
+
+        TwitterAPICaller.client?.getDictionaryRequest(url: userURL, parameters: myParams, success: { (info: NSDictionary) in
+            self.userInfo = info
+            print(self.userInfo)
+            
+            let url = URL(string: self.userInfo["profile_image_url"] as! String)
+            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            self.profileImage.image = UIImage(data: data!)
+            
+            
+        }, failure: { (Error) in
+            print("Could not retrieve data! Oh no!")
+        })
     }
     
     //Implementing character count
@@ -47,7 +66,7 @@ class TweetViewController: UIViewController, UITextViewDelegate {
         let newText = NSString(string: textView.text!).replacingCharacters(in: range, with: text)
 
         // TODO: Update Character Count Label
-        var count = characterLimit - newText.count
+        let count = characterLimit - newText.count
         charCount.text = String(count)
         if (count <= 20){
             charCount.textColor = #colorLiteral(red: 1, green: 0, blue: 0.09898722917, alpha: 1)

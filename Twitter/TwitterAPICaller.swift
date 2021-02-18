@@ -104,4 +104,14 @@ class TwitterAPICaller: BDBOAuth1SessionManager {
         })
     }
     
+    func getUserInfo(url: String, parameters: [String:Any], success: @escaping ([NSDictionary]) -> (), failure: @escaping (Error) -> ()){
+    
+        TwitterAPICaller.client?.get(url, parameters: parameters, progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
+            success(response as! [NSDictionary])
+        }, failure: { (task: URLSessionDataTask?, error: Error) in
+            failure(error)
+        })
+    
+    }
+    
 }
