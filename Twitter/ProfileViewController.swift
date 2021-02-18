@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var followingCount: UILabel!
     @IBOutlet weak var followerCount: UILabel!
+    @IBOutlet weak var tweetCount: UILabel!
     var userInfo = NSDictionary()
     
     
@@ -78,6 +79,10 @@ class ProfileViewController: UIViewController {
             let count2 = self.userInfo["friends_count"]
             self.followerCount.text = String(count1 as! Int)
             self.followingCount.text = String(count2 as! Int)
+            
+            //Setting tweet count
+            let count3 = self.userInfo["statuses_count"]
+            self.tweetCount.text = String(count3 as! Int)
             
         }, failure: { (Error) in
             print("Could not retrieve data! Oh no!")
